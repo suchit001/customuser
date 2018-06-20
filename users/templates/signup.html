@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    Security Question:<br><br>
+    <select>
+      <option value="1">Your pet name</option>
+      <option value="2">Your childhood friend</option>
+      <option value="3">Facourite food</option>
+    </select><br></form><br>
+    <input type="text" placeholder="Your Answer" value="{{ user.sq }}"><br><br>
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}
